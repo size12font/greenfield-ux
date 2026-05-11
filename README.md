@@ -33,7 +33,7 @@ chmod +x install.sh uninstall.sh
 | Tool | Install location |
 |---|---|
 | Claude Code | `~/.claude/skills/greenfield-ux/SKILL.md` and `~/.claude/commands/greenfield-ux.md` |
-| Cursor | `~/.cursor/commands/greenfield-ux.md` and `~/.cursor/rules/greenfield-ux.mdc` |
+| Cursor | `~/.cursor/commands/greenfield-ux.md` |
 | OpenCode | `~/.config/opencode/commands/greenfield-ux.md` |
 | Amp | `~/.config/amp/commands/greenfield-ux.md` |
 | Gemini CLI | `~/.gemini/commands/greenfield-ux.toml` |
