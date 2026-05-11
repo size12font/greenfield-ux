@@ -55,6 +55,12 @@ Or, where slash commands are supported:
 /greenfield-ux Review this settings page and improve the interaction design.
 ```
 
+In Codex, restart the app after installing so new skills are indexed, then ask:
+
+```text
+Use greenfield-ux to review this settings page and improve the interaction design.
+```
+
 ## Uninstall
 
 ```bash

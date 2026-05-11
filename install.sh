@@ -92,11 +92,13 @@ PYAPPEND
 TMP_DIR="$(mktemp -d)"
 SCRIPT_DIR="$(detect_script_dir)"
 SKILL_MD="${TMP_DIR}/greenfield_ux.md"
+CODEX_SKILL_MD="${TMP_DIR}/codex-greenfield-ux.md"
 GEMINI_TOML="${TMP_DIR}/greenfield-ux.toml"
 
 require_cmd python3
 
 fetch_file "greenfield_ux.md" "${SKILL_MD}"
+fetch_file "skills/greenfield-ux/SKILL.md" "${CODEX_SKILL_MD}"
 fetch_file "commands/greenfield-ux.toml" "${GEMINI_TOML}"
 
 copy_file "${SKILL_MD}" "${HOME}/.claude/commands/${SKILL_NAME}.md"
@@ -106,7 +108,7 @@ copy_file "${SKILL_MD}" "${HOME}/.config/opencode/commands/${SKILL_NAME}.md"
 copy_file "${SKILL_MD}" "${HOME}/.config/amp/commands/${SKILL_NAME}.md"
 copy_file "${GEMINI_TOML}" "${HOME}/.gemini/commands/${SKILL_NAME}.toml"
 copy_file "${SKILL_MD}" "${HOME}/.gemini/antigravity/global_skills/${SKILL_NAME}/SKILL.md"
-copy_file "${SKILL_MD}" "${HOME}/.codex/skills/${SKILL_NAME}/SKILL.md"
+copy_file "${CODEX_SKILL_MD}" "${HOME}/.codex/skills/${SKILL_NAME}/SKILL.md"
 append_marked_block "${SKILL_MD}" "${HOME}/.codeium/windsurf/memories/global_rules.md"
 
 log "Done. Use /greenfield-ux where slash commands are supported, or ask your coding agent to apply Greenfield UX."

@@ -1,3 +1,8 @@
+---
+name: greenfield-ux
+description: Apply Greenfield UX when creating, refactoring, or reviewing product UI, with checks for workflow quality, accessibility, mobile behavior, states, deep links, and concrete UX fixes.
+---
+
 # Greenfield UX
 
 Greenfield UX is an AI coding skill for building and reviewing modern product interfaces.
