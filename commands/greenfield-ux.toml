@@ -1,0 +1,8 @@
+description = "Apply Greenfield UX rules to UI generation, review, and refactoring."
+prompt = """
+Use the Greenfield UX skill. Apply these rules when generating, reviewing, or refactoring product UI.
+
+{{args}}
+
+Read the installed Greenfield UX skill file for the full checklist.
+"""
