@@ -8,7 +8,7 @@ It installs your UX checklist into common coding-agent locations so users can as
 
 - `greenfield_ux.md`: the main skill file
 - `skills/greenfield-ux/SKILL.md`: generic skill format
-- `commands/greenfield-ux.md`: slash-command friendly markdown
+- `commands/greenfield-ux.md`: slash-command friendly markdown for tools that use command files
 - `commands/greenfield-ux.toml`: Gemini CLI command format
 - `install.sh`: installer
 - `uninstall.sh`: cleanup script
@@ -32,7 +32,7 @@ chmod +x install.sh uninstall.sh
 
 | Tool | Install location |
 |---|---|
-| Claude Code | `~/.claude/skills/greenfield-ux/SKILL.md` and `~/.claude/commands/greenfield-ux.md` |
+| Claude Code | `~/.claude/skills/greenfield-ux/SKILL.md` |
 | Cursor | `~/.cursor/commands/greenfield-ux.md` |
 | OpenCode | `~/.config/opencode/commands/greenfield-ux.md` |
 | Amp | `~/.config/amp/commands/greenfield-ux.md` |

@@ -101,7 +101,7 @@ fetch_file "greenfield_ux.md" "${SKILL_MD}"
 fetch_file "skills/greenfield-ux/SKILL.md" "${CODEX_SKILL_MD}"
 fetch_file "commands/greenfield-ux.toml" "${GEMINI_TOML}"
 
-copy_file "${SKILL_MD}" "${HOME}/.claude/commands/${SKILL_NAME}.md"
+rm -f "${HOME}/.claude/commands/${SKILL_NAME}.md"
 copy_file "${CODEX_SKILL_MD}" "${HOME}/.claude/skills/${SKILL_NAME}/SKILL.md"
 copy_file "${SKILL_MD}" "${HOME}/.cursor/commands/${SKILL_NAME}.md"
 rm -f "${HOME}/.cursor/rules/${SKILL_NAME}.mdc"
