@@ -39,6 +39,7 @@ PYREMOVE
 }
 
 remove_file "${HOME}/.claude/commands/${SKILL_NAME}.md"
+remove_file "${HOME}/.claude/skills/${SKILL_NAME}.md"
 remove_dir "${HOME}/.claude/skills/${SKILL_NAME}"
 remove_file "${HOME}/.cursor/commands/${SKILL_NAME}.md"
 remove_file "${HOME}/.cursor/rules/${SKILL_NAME}.mdc"
