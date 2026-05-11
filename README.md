@@ -32,7 +32,7 @@ chmod +x install.sh uninstall.sh
 
 | Tool | Install location |
 |---|---|
-| Claude Code | `~/.claude/commands/greenfield-ux.md` |
+| Claude Code | `~/.claude/skills/greenfield-ux/SKILL.md` and `~/.claude/commands/greenfield-ux.md` |
 | Cursor | `~/.cursor/commands/greenfield-ux.md` and `~/.cursor/rules/greenfield-ux.mdc` |
 | OpenCode | `~/.config/opencode/commands/greenfield-ux.md` |
 | Amp | `~/.config/amp/commands/greenfield-ux.md` |
@@ -49,7 +49,7 @@ Ask your coding agent:
 Use Greenfield UX to review this UI and return concrete changes.
 ```
 
-Or, where slash commands are supported:
+Or, where slash commands / skills are supported:
 
 ```text
 /greenfield-ux Review this settings page and improve the interaction design.
