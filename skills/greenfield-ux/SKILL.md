@@ -1,6 +1,8 @@
 ---
 name: greenfield-ux
 description: Apply Greenfield UX when creating, refactoring, or reviewing product UI, with checks for workflow quality, accessibility, mobile behavior, states, deep links, and concrete UX fixes.
+metadata:
+  short-description: Greenfield UX UI generation and review checklist
 ---
 
 # Greenfield UX

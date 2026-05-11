@@ -112,4 +112,6 @@ copy_file "${SKILL_MD}" "${HOME}/.gemini/antigravity/global_skills/${SKILL_NAME}
 copy_file "${CODEX_SKILL_MD}" "${HOME}/.codex/skills/${SKILL_NAME}/SKILL.md"
 append_marked_block "${SKILL_MD}" "${HOME}/.codeium/windsurf/memories/global_rules.md"
 
-log "Done. Use /greenfield-ux where slash commands are supported, or ask your coding agent to apply Greenfield UX."
+log "Done."
+log "Claude Code: restart, then use /greenfield-ux."
+log "Codex: restart, then invoke with \$greenfield-ux or ask to use greenfield-ux."

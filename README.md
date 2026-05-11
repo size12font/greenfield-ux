@@ -49,16 +49,16 @@ Ask your coding agent:
 Use Greenfield UX to review this UI and return concrete changes.
 ```
 
-Or, where slash commands / skills are supported:
+In Codex, restart the app after installing so new skills are indexed, then use:
+
+```text
+$greenfield-ux Review this settings page and improve the interaction design.
+```
+
+In Claude Code, restart after installing, then use:
 
 ```text
 /greenfield-ux Review this settings page and improve the interaction design.
-```
-
-In Codex, restart the app after installing so new skills are indexed, then ask:
-
-```text
-Use greenfield-ux to review this settings page and improve the interaction design.
 ```
 
 ## Uninstall
