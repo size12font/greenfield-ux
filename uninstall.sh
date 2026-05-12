@@ -6,14 +6,14 @@ SKILL_NAME="greenfield-ux"
 remove_file() {
   local path="$1"
   if [[ -f "${path}" ]]; then
-    rm -f "${path}"
+    rm "${path}"
     echo "Removed ${path}"
   fi
 }
 
 remove_dir() {
   local path="$1"
-  if [[ -d "${path}" && "${path}" == "${HOME}/."* ]]; then
+  if [[ -d "${path}" ]]; then
     rm -rf "${path}"
     echo "Removed ${path}"
   fi
@@ -22,10 +22,6 @@ remove_dir() {
 remove_marked_block() {
   local path="$1"
   [[ -f "${path}" ]] || return 0
-  if ! command -v python3 >/dev/null 2>&1; then
-    echo "Missing required command: python3" >&2
-    exit 1
-  fi
   python3 - "$path" <<'PYREMOVE'
 from pathlib import Path
 import re
@@ -39,8 +35,6 @@ PYREMOVE
 }
 
 remove_file "${HOME}/.claude/commands/${SKILL_NAME}.md"
-remove_file "${HOME}/.claude/skills/${SKILL_NAME}.md"
-remove_dir "${HOME}/.claude/skills/${SKILL_NAME}"
 remove_file "${HOME}/.cursor/commands/${SKILL_NAME}.md"
 remove_file "${HOME}/.cursor/rules/${SKILL_NAME}.mdc"
 remove_file "${HOME}/.config/opencode/commands/${SKILL_NAME}.md"

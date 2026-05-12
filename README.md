@@ -8,21 +8,29 @@ It installs your UX checklist into common coding-agent locations so users can as
 
 - `greenfield_ux.md`: the main skill file
 - `skills/greenfield-ux/SKILL.md`: generic skill format
-- `commands/greenfield-ux.md`: slash-command friendly markdown for tools that use command files
+- `commands/greenfield-ux.md`: slash-command friendly markdown
 - `commands/greenfield-ux.toml`: Gemini CLI command format
 - `install.sh`: installer
 - `uninstall.sh`: cleanup script
 
 ## Install from GitHub
 
+Before publishing, replace `YOUR_GITHUB_USERNAME` in `install.sh` and this README.
+
 ```bash
-curl -fsSL https://raw.githubusercontent.com/size12font/greenfield-ux/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/greenfield-ux/main/install.sh | bash
+```
+
+Alternative without editing `install.sh` first:
+
+```bash
+GREENFIELD_UX_RAW_BASE="https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/greenfield-ux/main"   bash -c "$(curl -fsSL https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/greenfield-ux/main/install.sh)"
 ```
 
 ## Install locally
 
 ```bash
-git clone https://github.com/size12font/greenfield-ux.git
+git clone https://github.com/YOUR_GITHUB_USERNAME/greenfield-ux.git
 cd greenfield-ux
 chmod +x install.sh uninstall.sh
 ./install.sh
@@ -32,8 +40,8 @@ chmod +x install.sh uninstall.sh
 
 | Tool | Install location |
 |---|---|
-| Claude Code | `~/.claude/skills/greenfield-ux/SKILL.md` |
-| Cursor | `~/.cursor/commands/greenfield-ux.md` |
+| Claude Code | `~/.claude/commands/greenfield-ux.md` |
+| Cursor | `~/.cursor/commands/greenfield-ux.md` and `~/.cursor/rules/greenfield-ux.mdc` |
 | OpenCode | `~/.config/opencode/commands/greenfield-ux.md` |
 | Amp | `~/.config/amp/commands/greenfield-ux.md` |
 | Gemini CLI | `~/.gemini/commands/greenfield-ux.toml` |
@@ -49,13 +57,7 @@ Ask your coding agent:
 Use Greenfield UX to review this UI and return concrete changes.
 ```
 
-In Codex, restart the app after installing so new skills are indexed, then use:
-
-```text
-$greenfield-ux Review this settings page and improve the interaction design.
-```
-
-In Claude Code, restart after installing, then use:
+Or, where slash commands are supported:
 
 ```text
 /greenfield-ux Review this settings page and improve the interaction design.
