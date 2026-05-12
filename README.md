@@ -2,7 +2,7 @@
 
 Greenfield UX is an AI coding skill for building and reviewing modern product interfaces.
 
-It installs your UX checklist into common coding-agent locations so users can ask their agent to apply Greenfield UX while generating, refactoring, or reviewing UI.
+It installs your UX checklist into common coding-agent skill locations so users can ask their agent to apply Greenfield UX while generating, refactoring, or reviewing UI.
 
 ## What is included
 
@@ -10,19 +10,23 @@ It installs your UX checklist into common coding-agent locations so users can as
 - `skills/greenfield-ux/SKILL.md`: generic skill format
 - `commands/greenfield-ux.md`: slash-command friendly markdown
 - `commands/greenfield-ux.toml`: Gemini CLI command format
-- `install.sh`: installer
+- `install.sh`: optional custom installer for slash-command files
 - `uninstall.sh`: cleanup script
 
-## Install from GitHub
+## Install
+
+```bash
+npx -y skills add https://github.com/size12font/greenfield-ux --skill greenfield-ux -g -a '*' -y --copy
+```
+
+This uses the standard `skills` installer. It reads `skills/greenfield-ux/SKILL.md` from this repo and installs it globally for supported agents.
+
+## Optional slash-command installer
+
+Use this only if you also want this repo's custom command files copied into tools that support slash commands.
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/size12font/greenfield-ux/main/install.sh | bash
-```
-
-Alternative for forks:
-
-```bash
-GREENFIELD_UX_RAW_BASE="https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/greenfield-ux/main" bash -c "$(curl -fsSL https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/greenfield-ux/main/install.sh)"
 ```
 
 ## Install locally
@@ -34,7 +38,11 @@ chmod +x install.sh uninstall.sh
 ./install.sh
 ```
 
-## What gets installed
+## What gets installed with `npx skills add`
+
+The standard installer copies `SKILL.md` into supported agent skill directories, including Codex, Claude Code, Antigravity, Windsurf, and the shared `~/.agents/skills/greenfield-ux/SKILL.md` folder.
+
+## Extra files from `install.sh`
 
 | Tool | Install location |
 |---|---|
@@ -69,6 +77,12 @@ Claude Code and agents with slash-command support:
 ```
 
 ## Uninstall
+
+```bash
+npx -y skills remove greenfield-ux -g -a '*' -y
+```
+
+If you used `install.sh`, run:
 
 ```bash
 ./uninstall.sh
