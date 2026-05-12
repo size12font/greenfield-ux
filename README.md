@@ -15,22 +15,20 @@ It installs your UX checklist into common coding-agent locations so users can as
 
 ## Install from GitHub
 
-Before publishing, replace `YOUR_GITHUB_USERNAME` in `install.sh` and this README.
-
 ```bash
-curl -fsSL https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/greenfield-ux/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/size12font/greenfield-ux/main/install.sh | bash
 ```
 
-Alternative without editing `install.sh` first:
+Alternative for forks:
 
 ```bash
-GREENFIELD_UX_RAW_BASE="https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/greenfield-ux/main"   bash -c "$(curl -fsSL https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/greenfield-ux/main/install.sh)"
+GREENFIELD_UX_RAW_BASE="https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/greenfield-ux/main" bash -c "$(curl -fsSL https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/greenfield-ux/main/install.sh)"
 ```
 
 ## Install locally
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/greenfield-ux.git
+git clone https://github.com/size12font/greenfield-ux.git
 cd greenfield-ux
 chmod +x install.sh uninstall.sh
 ./install.sh
@@ -40,14 +38,15 @@ chmod +x install.sh uninstall.sh
 
 | Tool | Install location |
 |---|---|
-| Claude Code | `~/.claude/commands/greenfield-ux.md` |
+| Codex | `~/.codex/skills/greenfield-ux/SKILL.md`, `~/.codex/commands/greenfield-ux.md`, and `~/.codex/prompts/greenfield-ux.md` |
+| Antigravity | `~/.gemini/antigravity/global_skills/greenfield-ux/SKILL.md` |
+| Claude Code | `~/.claude/commands/greenfield-ux.md` and `~/.claude/skills/greenfield-ux/SKILL.md` |
 | Cursor | `~/.cursor/commands/greenfield-ux.md` and `~/.cursor/rules/greenfield-ux.mdc` |
 | OpenCode | `~/.config/opencode/commands/greenfield-ux.md` |
 | Amp | `~/.config/amp/commands/greenfield-ux.md` |
 | Gemini CLI | `~/.gemini/commands/greenfield-ux.toml` |
-| Antigravity | `~/.gemini/antigravity/global_skills/greenfield-ux/SKILL.md` |
 | Windsurf | appends a marked block to `~/.codeium/windsurf/memories/global_rules.md` |
-| Generic Codex-style folder | `~/.codex/skills/greenfield-ux/SKILL.md` |
+| Generic agent skill folder | `~/.agents/skills/greenfield-ux/SKILL.md` |
 
 ## Usage
 
@@ -57,7 +56,13 @@ Ask your coding agent:
 Use Greenfield UX to review this UI and return concrete changes.
 ```
 
-Or, where slash commands are supported:
+Codex:
+
+```text
+$greenfield-ux Review this settings page and improve the interaction design.
+```
+
+Claude Code and agents with slash-command support:
 
 ```text
 /greenfield-ux Review this settings page and improve the interaction design.

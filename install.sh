@@ -4,8 +4,7 @@ set -euo pipefail
 SKILL_NAME="greenfield-ux"
 DISPLAY_NAME="Greenfield UX"
 
-# Replace this before publishing, or set GREENFIELD_UX_RAW_BASE when installing.
-DEFAULT_RAW_BASE="https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/greenfield-ux/main"
+DEFAULT_RAW_BASE="https://raw.githubusercontent.com/size12font/greenfield-ux/main"
 RAW_BASE="${GREENFIELD_UX_RAW_BASE:-$DEFAULT_RAW_BASE}"
 TMP_DIR=""
 
@@ -20,6 +19,14 @@ cleanup() {
 }
 trap cleanup EXIT
 
+require_cmd() {
+  local cmd="$1"
+  if ! command -v "${cmd}" >/dev/null 2>&1; then
+    err "Missing required command: ${cmd}"
+    exit 1
+  fi
+}
+
 fetch_file() {
   local path="$1"
   local dest="$2"
@@ -29,12 +36,7 @@ fetch_file() {
     return 0
   fi
 
-  if [[ "${RAW_BASE}" == *"YOUR_GITHUB_USERNAME"* ]]; then
-    err "GitHub raw URL is not configured."
-    err "Edit DEFAULT_RAW_BASE in install.sh, or run with GREENFIELD_UX_RAW_BASE set to your raw GitHub URL."
-    exit 1
-  fi
-
+  require_cmd curl
   curl -fsSL "${RAW_BASE}/${path}" -o "${dest}"
 }
 
@@ -76,20 +78,33 @@ PYAPPEND
 
 TMP_DIR="$(mktemp -d)"
 SKILL_MD="${TMP_DIR}/greenfield_ux.md"
+COMMAND_MD="${TMP_DIR}/greenfield-ux-command.md"
+CODEX_SKILL_MD="${TMP_DIR}/greenfield-ux-skill.md"
 GEMINI_TOML="${TMP_DIR}/greenfield-ux.toml"
 
+require_cmd python3
+
 fetch_file "greenfield_ux.md" "${SKILL_MD}"
+fetch_file "commands/greenfield-ux.md" "${COMMAND_MD}"
+fetch_file "skills/greenfield-ux/SKILL.md" "${CODEX_SKILL_MD}"
 fetch_file "commands/greenfield-ux.toml" "${GEMINI_TOML}"
 
-copy_file "${SKILL_MD}" "${HOME}/.claude/commands/${SKILL_NAME}.md"
-copy_file "${SKILL_MD}" "${HOME}/.cursor/commands/${SKILL_NAME}.md"
-copy_file "${SKILL_MD}" "${HOME}/.cursor/rules/${SKILL_NAME}.mdc"
-copy_file "${SKILL_MD}" "${HOME}/.config/opencode/commands/${SKILL_NAME}.md"
-copy_file "${SKILL_MD}" "${HOME}/.config/amp/commands/${SKILL_NAME}.md"
+copy_file "${COMMAND_MD}" "${HOME}/.claude/commands/${SKILL_NAME}.md"
+copy_file "${CODEX_SKILL_MD}" "${HOME}/.claude/skills/${SKILL_NAME}/SKILL.md"
+copy_file "${COMMAND_MD}" "${HOME}/.cursor/commands/${SKILL_NAME}.md"
+copy_file "${COMMAND_MD}" "${HOME}/.cursor/rules/${SKILL_NAME}.mdc"
+copy_file "${COMMAND_MD}" "${HOME}/.config/opencode/commands/${SKILL_NAME}.md"
+copy_file "${COMMAND_MD}" "${HOME}/.config/amp/commands/${SKILL_NAME}.md"
 copy_file "${GEMINI_TOML}" "${HOME}/.gemini/commands/${SKILL_NAME}.toml"
-copy_file "${SKILL_MD}" "${HOME}/.gemini/antigravity/global_skills/${SKILL_NAME}/SKILL.md"
-copy_file "${SKILL_MD}" "${HOME}/.codex/skills/${SKILL_NAME}/SKILL.md"
+copy_file "${CODEX_SKILL_MD}" "${HOME}/.gemini/antigravity/global_skills/${SKILL_NAME}/SKILL.md"
+copy_file "${CODEX_SKILL_MD}" "${HOME}/.codex/skills/${SKILL_NAME}/SKILL.md"
+copy_file "${COMMAND_MD}" "${HOME}/.codex/commands/${SKILL_NAME}.md"
+copy_file "${COMMAND_MD}" "${HOME}/.codex/prompts/${SKILL_NAME}.md"
+copy_file "${CODEX_SKILL_MD}" "${HOME}/.agents/skills/${SKILL_NAME}/SKILL.md"
 append_marked_block "${SKILL_MD}" "${HOME}/.codeium/windsurf/memories/global_rules.md"
 
-log "Done. Use /greenfield-ux where slash commands are supported, or ask your coding agent to apply Greenfield UX."
-warn "Before public curl installs work, replace YOUR_GITHUB_USERNAME in install.sh and README.md."
+log "Done."
+log "Codex: restart, then use \$greenfield-ux. /greenfield-ux is installed for Codex slash-command paths where supported."
+log "Antigravity: restart, then use Greenfield UX from global skills."
+log "Claude Code: restart, then use /greenfield-ux."
+log "Cursor/OpenCode/Amp/Gemini CLI: restart, then use /greenfield-ux where slash commands are supported."
