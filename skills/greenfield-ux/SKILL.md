@@ -24,6 +24,16 @@ When applying this skill:
 
 ## Source rules
 
+Required product behaviors
+
+1. Lists with item actions need multi-select. If a list item can be edited, deleted, archived, moved, exported, or otherwise acted on, support multi-select and bulk actions for that action set.
+2. Long lists need standard range selection. Support Shift-select for ranges, Cmd/Ctrl-select for non-contiguous selection, and tap+drag selection on touch devices where bulk work is expected.
+3. Every list needs filtering and sorting. Provide useful filters and sort controls for all lists. For tables, every column header shows a sort arrow and has a clear ascending, descending, and unsorted state.
+4. Settings spanning more than two screens need contextual search. Search should understand intent and nearby concepts, not only exact keyword matches. Results should deep-link directly to the matching setting.
+5. Form errors move the user to the problem. On submit, scroll to the first invalid field or error summary, focus it safely, and keep the error message next to the field.
+6. Auth never loses intent. If a user starts an action and must log in, return them to the exact same action screen after login with the relevant context preserved.
+7. Deep links must preserve the exact experience across web and mobile. Tabs, filters, pagination, selected items, expanded panels, drafts, and action screens must round-trip across app links, universal links, mobile browsers, desktop browsers, and in-app browsers including Facebook's browser.
+
 Interactions
 
 1. [**Keyboard works everywhere.**](https://vercel.com/design/guidelines#keyboard-works-everywhere) All flows are keyboard-operable & follow the [WAI-ARIA Authoring Patterns](https://www.w3.org/WAI/ARIA/apg/patterns/).
