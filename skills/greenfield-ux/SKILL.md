@@ -13,6 +13,8 @@ license: Apache 2.0. Based on Greenfield UX and Anthropic's frontend-design skil
 
 Greenfield UX builds and reviews modern product interfaces. It merges workflow-first product UX checks with high-craft frontend design standards. Priority order: usable flow, complete states, accessibility, mobile behavior, performance, then visual distinctiveness.
 
+Build real working code in the project's stack: HTML/CSS/JS, React, Vue, or whatever the repo already uses. The output should be production-grade, functional, cohesive, and meticulously refined, not a static mock unless explicitly requested.
+
 ## Operating Mode
 
 When applying this skill:
@@ -81,6 +83,8 @@ Commit to a clear point of view before implementation:
 - Differentiation: what someone will remember.
 
 Bold maximalism and refined minimalism can both work. Intention matters more than intensity.
+
+Match implementation complexity to the vision. Maximalist interfaces may need layered effects, custom animation, and richer interaction code. Minimal or refined interfaces need restraint, precision, typography, spacing, and careful states.
 
 ## Workflow Rules
 
@@ -167,6 +171,7 @@ Dark vs light is never a default. Choose from the physical scene: who uses this,
 ### Color
 
 - Use OKLCH and modern CSS color functions where possible.
+- Use CSS variables or the project's token system for reusable color decisions.
 - Reduce chroma as lightness approaches 0 or 100.
 - Never use pure `#000` or `#fff`; tint neutrals toward the brand hue.
 - Do not use gray text on colored backgrounds. Use a shade of the background color.
@@ -243,10 +248,18 @@ Rules:
 - Align deliberately to grid, baseline, edge, or optical center.
 - Adjust optical alignment by 1px when perception beats geometry.
 - Balance contrast in icon/text lockups through stroke, weight, size, spacing, and color.
+- Use unexpected composition when it supports the workflow or brand: asymmetry, overlap, diagonal flow, grid-breaking elements, generous negative space, or controlled density.
 - Use layered shadows when elevation matters: ambient plus direct light.
 - Combine borders and shadows for crisp edges.
 - Child radii should be less than or equal to parent radii and visually concentric.
 - On non-neutral backgrounds, tint borders, shadows, and text toward the same hue.
+
+### Backgrounds And Atmosphere
+
+- Avoid defaulting to flat solid backgrounds when the surface needs identity or depth.
+- Use contextual atmosphere only when it supports the product or brand: subtle texture, noise, geometric pattern, layered transparency, dramatic shadow, decorative border, custom cursor, grain overlay, or gradient mesh.
+- Background effects must not reduce readability, contrast, performance, or task focus.
+- Decorative layers should be purposeful and hidden from assistive tech.
 
 Do not:
 
@@ -260,6 +273,10 @@ Do not:
 
 - Use motion to explain state changes: entrances, exits, feedback, continuity.
 - One well-orchestrated page load can beat scattered micro-interactions.
+- For HTML/CSS-first work, prefer CSS-only animation when it is enough.
+- For React work, use the project's existing motion library when available.
+- Staggered reveals with `animation-delay` can create stronger first impression than many unrelated micro-interactions.
+- Scroll-triggered and hover interactions should reveal useful affordance or character, not random movement.
 - Use exponential easing: ease-out-quart, ease-out-quint, ease-out-expo.
 - Animate transform and opacity before layout properties.
 - Avoid width, height, top, left, padding, and margin animations.
@@ -360,6 +377,8 @@ Before considering UI done, verify:
 - Contrast is acceptable.
 - Motion respects reduced motion.
 - Performance has no obvious re-render or layout-thrash problem.
+- Visual direction is cohesive and memorable, with at least one context-specific design choice.
+- Background, texture, or decorative effects support the interface instead of distracting from it.
 - Absolute bans are absent.
 
 ## Commands
