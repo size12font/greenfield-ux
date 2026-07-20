@@ -6,7 +6,7 @@ argument-hint: "[{{command_hint}}] [target]"
 user-invocable: true
 metadata:
   short-description: Greenfield UX product UI generation and review skill
-license: Apache 2.0. Based on Greenfield UX and Anthropic's frontend-design skill. See NOTICE.md for attribution where applicable.
+license: Apache 2.0. Based on Greenfield UX and Anthropic's frontend-design skill. See NOTICE for attribution where applicable.
 ---
 
 # Greenfield UX

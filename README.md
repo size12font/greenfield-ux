@@ -1,17 +1,18 @@
+<div align="center">
+
+![Greenfield UX](docs/images/greenfield-ux-hero.svg)
+
 # Greenfield UX
 
-Greenfield UX is an AI coding skill for building and reviewing modern product interfaces.
+**An agent skill for building product interfaces that feel considered, complete, and ready to ship.**
 
-It installs your UX checklist into common coding-agent skill locations so users can ask their agent to apply Greenfield UX while generating, refactoring, or reviewing UI.
+[![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-4f46e5.svg)](LICENSE)
+[![Install with skills.sh](https://img.shields.io/badge/install-skills.sh-111827.svg)](https://skills.sh/)
+[![Agent Skill](https://img.shields.io/badge/format-Agent%20Skill-16a34a.svg)](skills/greenfield-ux/SKILL.md)
 
-## What is included
+</div>
 
-- `greenfield_ux.md`: the main skill file
-- `skills/greenfield-ux/SKILL.md`: generic skill format
-- `commands/greenfield-ux.md`: slash-command friendly markdown
-- `commands/greenfield-ux.toml`: Gemini CLI command format
-- `install.sh`: optional custom installer for slash-command files
-- `uninstall.sh`: cleanup script
+Greenfield UX gives coding agents a practical product-design operating system. It combines workflow quality, accessibility, responsive behavior, complete states, performance, and visual craft in one reusable skill.
 
 ## Install
 
@@ -19,84 +20,78 @@ It installs your UX checklist into common coding-agent skill locations so users 
 npx -y skills add https://github.com/size12font/greenfield-ux --skill greenfield-ux -g -a '*' -y --copy
 ```
 
-This uses the standard `skills` installer. It reads `skills/greenfield-ux/SKILL.md` from this repo and installs it globally for supported agents.
+The command uses the [skills.sh](https://skills.sh/) installer and copies `skills/greenfield-ux/SKILL.md` to supported coding agents.
 
-## Optional slash-command installer
+## Use it
 
-Use this only if you also want this repo's custom command files copied into tools that support slash commands.
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/size12font/greenfield-ux/main/install.sh | bash
-```
-
-## Install locally
-
-```bash
-git clone https://github.com/size12font/greenfield-ux.git
-cd greenfield-ux
-chmod +x install.sh uninstall.sh
-./install.sh
-```
-
-## What gets installed with `npx skills add`
-
-The standard installer copies `SKILL.md` into supported agent skill directories, including Codex, Claude Code, Antigravity, Windsurf, and the shared `~/.agents/skills/greenfield-ux/SKILL.md` folder.
-
-## Extra files from `install.sh`
-
-| Tool | Install location |
-|---|---|
-| Codex | `~/.codex/skills/greenfield-ux/SKILL.md`, `~/.codex/commands/greenfield-ux.md`, and `~/.codex/prompts/greenfield-ux.md` |
-| Antigravity | `~/.gemini/antigravity/global_skills/greenfield-ux/SKILL.md` |
-| Claude Code | `~/.claude/commands/greenfield-ux.md` and `~/.claude/skills/greenfield-ux/SKILL.md` |
-| Cursor | `~/.cursor/commands/greenfield-ux.md` and `~/.cursor/rules/greenfield-ux.mdc` |
-| OpenCode | `~/.config/opencode/commands/greenfield-ux.md` |
-| Amp | `~/.config/amp/commands/greenfield-ux.md` |
-| Gemini CLI | `~/.gemini/commands/greenfield-ux.toml` |
-| Windsurf | appends a marked block to `~/.codeium/windsurf/memories/global_rules.md` |
-| Generic agent skill folder | `~/.agents/skills/greenfield-ux/SKILL.md` |
-
-## Usage
-
-Ask your coding agent:
+Ask your agent in plain language:
 
 ```text
-Use Greenfield UX to review this UI and return concrete changes.
+Use Greenfield UX to redesign this onboarding flow and implement the result.
 ```
 
 Codex:
 
 ```text
-$greenfield-ux Review this settings page and improve the interaction design.
+$greenfield-ux Review this settings page. Fix workflow, accessibility, and responsive issues.
 ```
 
-Claude Code and agents with slash-command support:
+Claude Code and tools with slash-command support:
 
 ```text
-/greenfield-ux Review this settings page and improve the interaction design.
+/greenfield-ux Build a polished empty state and first-run experience.
 ```
 
-## Uninstall
+## What it changes
+
+Greenfield UX pushes agents beyond attractive screenshots toward working product quality:
+
+- **Workflow first** — preserve intent, deep-link meaningful state, and remove dead ends.
+- **Every state designed** — loading, empty, error, offline, permission, sparse, and dense.
+- **Accessible by default** — semantic controls, keyboard support, focus behavior, and useful labels.
+- **Responsive by behavior** — adapt the workflow, not only the layout.
+- **Fast by perception** — stable layout, intentional feedback, and no avoidable flicker.
+- **Visually coherent** — deliberate type, color, spacing, motion, iconography, and hierarchy.
+- **Production-minded** — real interactions, edge cases, acceptance criteria, and implementation in the existing stack.
+
+## How it works
+
+```mermaid
+flowchart LR
+  A["Read product and design context"] --> B["Map user workflow"]
+  B --> C["Implement complete interaction states"]
+  C --> D["Verify accessibility, responsive behavior, and performance"]
+  D --> E["Polish visual language and motion"]
+```
+
+## Repository layout
+
+| Path | Purpose |
+| --- | --- |
+| [`skills/greenfield-ux/SKILL.md`](skills/greenfield-ux/SKILL.md) | Canonical Agent Skill definition |
+| [`greenfield_ux.md`](greenfield_ux.md) | Portable single-file reference |
+| [`commands/`](commands/) | Slash-command and Gemini CLI formats |
+| [`install.sh`](install.sh) | Optional installer for command files and extra agent locations |
+| [`uninstall.sh`](uninstall.sh) | Cleanup for the optional installer |
+
+## Optional command installer
+
+Use this only when you also want the repository's command files copied into tools that support them:
 
 ```bash
-npx -y skills remove greenfield-ux -g -a '*' -y
+curl -fsSL https://raw.githubusercontent.com/size12font/greenfield-ux/main/install.sh | bash
 ```
 
-If you used `install.sh`, run:
+To remove those files later:
 
 ```bash
 ./uninstall.sh
 ```
 
-## Recommended GitHub repo setup
+## Contributing
 
-```bash
-git init
-git add .
-git commit -m "Initial Greenfield UX skill"
-gh repo create greenfield-ux --public --source=. --remote=origin --push
-```
+Issues and focused pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) before changing the canonical skill or installers.
 
-## License
+## License and attribution
 
-MIT
+Apache License 2.0. Greenfield UX includes adapted guidance from Anthropic's `frontend-design` skill; see [NOTICE](NOTICE).

@@ -1,0 +1,67 @@
+<svg width="1440" height="760" viewBox="0 0 1440 760" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Greenfield UX</title>
+  <desc id="desc">A product interface quality system for coding agents.</desc>
+  <defs>
+    <linearGradient id="bg" x1="84" y1="38" x2="1346" y2="730" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102A2B"/>
+      <stop offset="0.52" stop-color="#173D38"/>
+      <stop offset="1" stop-color="#0A1F24"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#D9FF70"/>
+      <stop offset="1" stop-color="#73E8B1"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="22" stdDeviation="28" flood-color="#001516" flood-opacity="0.38"/>
+    </filter>
+  </defs>
+  <rect width="1440" height="760" rx="36" fill="url(#bg)"/>
+  <circle cx="1280" cy="80" r="290" fill="#3A8F76" fill-opacity="0.12"/>
+  <circle cx="90" cy="710" r="250" fill="#B8FF66" fill-opacity="0.06"/>
+  <g opacity="0.15" stroke="#D7FBE8">
+    <path d="M0 132H1440M0 252H1440M0 372H1440M0 492H1440M0 612H1440"/>
+    <path d="M120 0V760M360 0V760M600 0V760M840 0V760M1080 0V760M1320 0V760"/>
+  </g>
+  <g transform="translate(92 92)">
+    <rect x="0" y="0" width="164" height="40" rx="20" fill="#D9FF70" fill-opacity="0.12" stroke="#D9FF70" stroke-opacity="0.44"/>
+    <circle cx="24" cy="20" r="6" fill="#D9FF70"/>
+    <text x="42" y="25" fill="#D9FF70" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1.6">AGENT SKILL</text>
+    <text x="0" y="126" fill="#F2FFF8" font-family="Arial, sans-serif" font-size="76" font-weight="800" letter-spacing="-3">Greenfield UX</text>
+    <text x="0" y="176" fill="#B8D5CC" font-family="Arial, sans-serif" font-size="25">Build interfaces people understand, trust, and enjoy using.</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="92" y="340" width="386" height="280" rx="24" fill="#F1FAF5"/>
+    <rect x="510" y="300" width="386" height="320" rx="24" fill="#F1FAF5"/>
+    <rect x="928" y="340" width="420" height="280" rx="24" fill="#F1FAF5"/>
+  </g>
+  <g font-family="Arial, sans-serif">
+    <text x="124" y="386" fill="#17322E" font-size="14" font-weight="700" letter-spacing="1.5">01 · WORKFLOW</text>
+    <text x="124" y="430" fill="#0F2625" font-size="30" font-weight="800">Intent survives.</text>
+    <text x="124" y="468" fill="#536D67" font-size="17">Deep links, useful defaults,</text>
+    <text x="124" y="494" fill="#536D67" font-size="17">clear recovery, no dead ends.</text>
+    <rect x="124" y="540" width="172" height="44" rx="12" fill="#DDF7E8"/>
+    <text x="144" y="568" fill="#176A4F" font-size="15" font-weight="700">Cause → effect</text>
+
+    <text x="542" y="346" fill="#17322E" font-size="14" font-weight="700" letter-spacing="1.5">02 · COMPLETE STATES</text>
+    <text x="542" y="390" fill="#0F2625" font-size="30" font-weight="800">Reality included.</text>
+    <g font-size="15" font-weight="700">
+      <rect x="542" y="424" width="116" height="38" rx="19" fill="#E6EFEA"/><text x="568" y="449" fill="#3E5952">Loading</text>
+      <rect x="670" y="424" width="100" height="38" rx="19" fill="#E6EFEA"/><text x="698" y="449" fill="#3E5952">Empty</text>
+      <rect x="782" y="424" width="82" height="38" rx="19" fill="#FFE6D8"/><text x="806" y="449" fill="#8B4A2C">Error</text>
+      <rect x="542" y="474" width="104" height="38" rx="19" fill="#E6EFEA"/><text x="568" y="499" fill="#3E5952">Offline</text>
+      <rect x="658" y="474" width="154" height="38" rx="19" fill="#E6EFEA"/><text x="682" y="499" fill="#3E5952">Permission</text>
+    </g>
+    <rect x="542" y="550" width="322" height="8" rx="4" fill="#D5E3DB"/>
+    <rect x="542" y="550" width="252" height="8" rx="4" fill="url(#accent)"/>
+    <text x="542" y="590" fill="#536D67" font-size="15">Keyboard · mobile · performance</text>
+
+    <text x="960" y="386" fill="#17322E" font-size="14" font-weight="700" letter-spacing="1.5">03 · CRAFT</text>
+    <text x="960" y="430" fill="#0F2625" font-size="30" font-weight="800">A point of view.</text>
+    <text x="960" y="468" fill="#536D67" font-size="17">Type, color, spacing, motion,</text>
+    <text x="960" y="494" fill="#536D67" font-size="17">and hierarchy work as one.</text>
+    <circle cx="982" cy="558" r="18" fill="#183D37"/>
+    <circle cx="1026" cy="558" r="18" fill="#63D49F"/>
+    <circle cx="1070" cy="558" r="18" fill="#D9FF70"/>
+    <path d="M1122 558H1288" stroke="#A8BDB6" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>
